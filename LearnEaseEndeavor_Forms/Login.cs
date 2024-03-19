@@ -34,12 +34,20 @@ namespace LearnEaseEndeavor_Forms
 
         private void Validate_Click(object sender, EventArgs e)
         {
-            if(EmailTextBox.Text == "Abdullah")
+            if(EmailTextBox.Text == "hsdlhdl")
             {
-                if(PasswordTextBox.Text == "open sesame")
+                if(PasswordTextBox.Text == "jsdo;a jk")
                 {
-
+                    ErrorLable.Text = ":: Login Successful ::";
                 }
+                else
+                {
+                    ErrorLable.Text = ":: Wrong Password ::";
+                }
+            }
+            else
+            {
+                ErrorLable.Text = ":: Email Not Found ::";
             }
         }
     }

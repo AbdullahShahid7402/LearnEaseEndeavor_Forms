@@ -36,6 +36,7 @@ namespace LearnEaseEndeavor_Forms
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.Validate = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ErrorLable = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,11 +98,23 @@ namespace LearnEaseEndeavor_Forms
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
+            // ErrorLable
+            // 
+            this.ErrorLable.AutoSize = true;
+            this.ErrorLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ErrorLable.ForeColor = System.Drawing.Color.Red;
+            this.ErrorLable.Location = new System.Drawing.Point(360, 356);
+            this.ErrorLable.Name = "ErrorLable";
+            this.ErrorLable.Size = new System.Drawing.Size(0, 20);
+            this.ErrorLable.TabIndex = 6;
+            this.ErrorLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ErrorLable);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Validate);
             this.Controls.Add(this.PasswordTextBox);
@@ -124,6 +137,7 @@ namespace LearnEaseEndeavor_Forms
         private System.Windows.Forms.TextBox PasswordTextBox;
         private System.Windows.Forms.Button Validate;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label ErrorLable;
     }
 }
 
