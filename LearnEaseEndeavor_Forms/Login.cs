@@ -38,8 +38,16 @@ namespace LearnEaseEndeavor_Forms
             {
                 if(PasswordTextBox.Text == "open sesame")
                 {
-
+                    ErrorLable.Text = ":: Login Successful ::";
                 }
+                else
+                {
+                    ErrorLable.Text = ":: Wrong Password ::";
+                }
+            }
+            else
+            {
+                ErrorLable.Text = ":: Email Not Found ::";
             }
         }
     }
