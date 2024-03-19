@@ -16,7 +16,8 @@ namespace LearnEaseEndeavor_Forms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            PageInstance page = PageInstance.getInstance();
+            Application.Run(page.getLogin());
         }
     }
 }

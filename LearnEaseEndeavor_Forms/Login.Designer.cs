@@ -84,6 +84,7 @@ namespace LearnEaseEndeavor_Forms
             this.Validate.TabIndex = 4;
             this.Validate.Text = "Login";
             this.Validate.UseVisualStyleBackColor = true;
+            this.Validate.Click += new System.EventHandler(this.Validate_Click);
             // 
             // pictureBox1
             // 

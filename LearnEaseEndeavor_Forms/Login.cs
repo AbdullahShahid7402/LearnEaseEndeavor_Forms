@@ -31,5 +31,16 @@ namespace LearnEaseEndeavor_Forms
         {
 
         }
+
+        private void Validate_Click(object sender, EventArgs e)
+        {
+            if(EmailTextBox.Text == "Abdullah")
+            {
+                if(PasswordTextBox.Text == "open sesame")
+                {
+
+                }
+            }
+        }
     }
 }
