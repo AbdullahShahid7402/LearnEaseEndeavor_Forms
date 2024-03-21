@@ -50,5 +50,10 @@ namespace LearnEaseEndeavor_Forms
                 ErrorLable.Text = ":: Email Not Found ::";
             }
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
