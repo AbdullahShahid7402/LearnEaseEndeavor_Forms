@@ -34,9 +34,9 @@ namespace LearnEaseEndeavor_Forms
 
         private void Validate_Click(object sender, EventArgs e)
         {
-            if(EmailTextBox.Text == "hsdlhdl")
+            if(EmailTextBox.Text == "Fatima")
             {
-                if(PasswordTextBox.Text == "jsdo;a jk")
+                if(PasswordTextBox.Text == "grant me access")
                 {
                     ErrorLable.Text = ":: Login Successful ::";
                 }
