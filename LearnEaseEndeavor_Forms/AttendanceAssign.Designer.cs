@@ -46,8 +46,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.Save = new System.Windows.Forms.Button();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -226,6 +226,16 @@
             this.panel4.Size = new System.Drawing.Size(939, 473);
             this.panel4.TabIndex = 10;
             // 
+            // Save
+            // 
+            this.Save.ForeColor = System.Drawing.Color.DarkGreen;
+            this.Save.Location = new System.Drawing.Point(861, 436);
+            this.Save.Name = "Save";
+            this.Save.Size = new System.Drawing.Size(75, 23);
+            this.Save.TabIndex = 0;
+            this.Save.Text = "Save";
+            this.Save.UseVisualStyleBackColor = true;
+            // 
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
@@ -235,15 +245,6 @@
             this.checkBox2.Size = new System.Drawing.Size(15, 14);
             this.checkBox2.TabIndex = 11;
             this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // Save
-            // 
-            this.Save.Location = new System.Drawing.Point(861, 436);
-            this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(75, 23);
-            this.Save.TabIndex = 0;
-            this.Save.Text = "Save";
-            this.Save.UseVisualStyleBackColor = true;
             // 
             // ManageAttendance
             // 
