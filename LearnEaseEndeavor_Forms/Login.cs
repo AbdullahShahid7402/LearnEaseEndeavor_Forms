@@ -34,9 +34,9 @@ namespace LearnEaseEndeavor_Forms
 
         private void Validate_Click(object sender, EventArgs e)
         {
-            if(EmailTextBox.Text == "Abdullah")
+            if(EmailTextBox.Text == "Fatima")
             {
-                if(PasswordTextBox.Text == "open sesame")
+                if(PasswordTextBox.Text == "grant me access")
                 {
                     ErrorLable.Text = ":: Login Successful ::";
                 }
@@ -49,6 +49,11 @@ namespace LearnEaseEndeavor_Forms
             {
                 ErrorLable.Text = ":: Email Not Found ::";
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
