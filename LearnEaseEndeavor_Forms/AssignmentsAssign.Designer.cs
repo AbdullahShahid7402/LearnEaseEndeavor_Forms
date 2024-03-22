@@ -50,6 +50,7 @@ namespace LearnEaseEndeavor_Forms
             this.label7 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -77,6 +78,7 @@ namespace LearnEaseEndeavor_Forms
             this.SelectaCourse.Name = "SelectaCourse";
             this.SelectaCourse.Size = new System.Drawing.Size(416, 24);
             this.SelectaCourse.TabIndex = 0;
+            this.SelectaCourse.SelectedIndexChanged += new System.EventHandler(this.SelectaCourse_SelectedIndexChanged);
             // 
             // button2
             // 
@@ -120,6 +122,7 @@ namespace LearnEaseEndeavor_Forms
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(324, 21);
             this.comboBox1.TabIndex = 3;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -163,6 +166,7 @@ namespace LearnEaseEndeavor_Forms
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.button1);
             this.panel4.Controls.Add(this.textBox4);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.textBox3);
@@ -254,6 +258,16 @@ namespace LearnEaseEndeavor_Forms
             this.label8.Text = "Weightage";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(753, 391);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Send";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // AssignmentsAssign
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -298,5 +312,6 @@ namespace LearnEaseEndeavor_Forms
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button1;
     }
 }

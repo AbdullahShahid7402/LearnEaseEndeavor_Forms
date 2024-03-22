@@ -44,7 +44,7 @@ namespace LearnEaseEndeavor_Forms
                 }
                 Console.WriteLine(user.Email);
 
-                string query = "SELECT * FROM [Subject] WHERE [Subject].[email_teacher] = '" + user.Email + "'";
+                string query = "SELECT DISTINCT [name] FROM [Subject] WHERE [email_teacher] = '" + user.Email + "'";
 
                 SqlCommand command = new SqlCommand(query, connection);
 
@@ -134,7 +134,7 @@ namespace LearnEaseEndeavor_Forms
                 }
                 Console.WriteLine(user.Email);
 
-                string query = "SELECT * FROM [Subject] WHERE [Subject].[email_teacher] = '" + user.Email + "' and [Subject].[name] = '" + SelectaCourse.SelectedItem.ToString() + "'";
+                string query = "SELECT DISTINCT [section] FROM [Subject] WHERE [Subject].[email_teacher] = '" + user.Email + "' and [Subject].[name] = '" + SelectaCourse.SelectedItem.ToString() + "'";
 
                 SqlCommand command = new SqlCommand(query, connection);
 
