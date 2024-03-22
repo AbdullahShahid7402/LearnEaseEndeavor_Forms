@@ -68,7 +68,6 @@ namespace LearnEaseEndeavor_Forms
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(370, 38);
             this.EmailTextBox.TabIndex = 2;
-            this.EmailTextBox.Text = "sidra.khalid@nu.edu.pk";
             // 
             // PasswordTextBox
             // 
@@ -77,7 +76,6 @@ namespace LearnEaseEndeavor_Forms
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.Size = new System.Drawing.Size(370, 38);
             this.PasswordTextBox.TabIndex = 3;
-            this.PasswordTextBox.Text = "1234";
             // 
             // Validate
             // 
