@@ -33,7 +33,7 @@
             this.SelectaCourse = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.SelectaSection = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.RollNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,11 +59,11 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(183, 7);
+            this.label1.Location = new System.Drawing.Point(254, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 16);
+            this.label1.Size = new System.Drawing.Size(92, 16);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Select Course";
+            this.label1.Text = "Refresh Courses";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -82,17 +82,16 @@
             this.SelectaCourse.BackColor = System.Drawing.Color.White;
             this.SelectaCourse.Font = new System.Drawing.Font("Segoe UI Emoji", 9F);
             this.SelectaCourse.FormattingEnabled = true;
-            this.SelectaCourse.Location = new System.Drawing.Point(48, 27);
+            this.SelectaCourse.Location = new System.Drawing.Point(90, 34);
             this.SelectaCourse.Name = "SelectaCourse";
             this.SelectaCourse.Size = new System.Drawing.Size(416, 24);
             this.SelectaCourse.TabIndex = 0;
-            this.SelectaCourse.SelectedIndexChanged += new System.EventHandler(this.SelectCourse);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.SelectaSection);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.SelectaCourse);
             this.panel1.Controls.Add(this.button2);
@@ -105,22 +104,26 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(631, 10);
+            this.label2.Location = new System.Drawing.Point(680, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 16);
+            this.label2.Size = new System.Drawing.Size(94, 16);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Select Section";
+            this.label2.Text = "Refresh Sections";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // comboBox1
+            // SelectaSection
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.White;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(505, 29);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(324, 21);
-            this.comboBox1.TabIndex = 3;
+            this.SelectaSection.BackColor = System.Drawing.Color.White;
+            this.SelectaSection.Font = new System.Drawing.Font("Segoe UI Emoji", 9F);
+            this.SelectaSection.FormattingEnabled = true;
+            this.SelectaSection.Location = new System.Drawing.Point(634, 34);
+            this.SelectaSection.Name = "SelectaSection";
+            this.SelectaSection.Size = new System.Drawing.Size(174, 24);
+            this.SelectaSection.TabIndex = 3;
+            this.SelectaSection.SelectedIndexChanged += new System.EventHandler(this.SelectaSection_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
@@ -278,8 +281,6 @@
         private System.Windows.Forms.ComboBox SelectaCourse;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
@@ -293,5 +294,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Button Save;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox SelectaSection;
     }
 }

@@ -11,15 +11,23 @@ namespace LearnEaseEndeavor_Forms
     class UserInstance
     {
         private static UserInstance obj = null;
-        private User user = null;
+        private User user;
 
-        private UserInstance() { }
+        private UserInstance() 
+        {
+            user = null;
+        }
 
         public static UserInstance getInstance()
         {
             if (obj == null)
                 obj = new UserInstance();
             return obj;
+        }
+
+        public User getUser()
+        {
+            return user;
         }
 
         public User setUser(string email, string password)

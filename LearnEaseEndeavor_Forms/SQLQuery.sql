@@ -56,7 +56,17 @@ VALUES ('abdullahshahid210@gmail.com', 'open sesame','Admin');
 INSERT INTO [User] ([email], [password], [type])
 VALUES ('i210721@nu.edu.pk', 'open sesame','Student');
 
+INSERT INTO [User] ([email], [password], [type])
+VALUES ('sidra.khalid@nu.edu.pk', '1234','Teacher');
+
 INSERT INTO [Student] ([name], [phone_number], [batch], [email])
 VALUES ('Abdullah Shahid Butt','012392912312',21,'i210721@nu.edu.pk');
 
-select * from [Student]
+INSERT INTO [Teacher] ([name], [phone_number], [email], [visiting])
+VALUES ('Sidra Khalid','03546565452','sidra.khalid@nu.edu.pk',0);
+select * from [Teacher]
+
+INSERT INTO [Subject] ([name], [section], [email_student], [email_teacher])
+VALUES ('Software Engineering', 'F', 'i210721@nu.edu.pk', 'sidra.khalid@nu.edu.pk');
+
+Select * from [Student] where [Student].[email] in (Select [Subject].[email_student] from [Subject] where [Subject].[name] = 'Software Engineering' and [Subject].[section] = 'F')

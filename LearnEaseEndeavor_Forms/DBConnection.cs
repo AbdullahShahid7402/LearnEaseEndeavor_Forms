@@ -24,6 +24,12 @@ namespace LearnEaseEndeavor_Forms
             return obj;
         }
 
+        public DBConnection reconnect()
+        {
+            obj = new DBConnection();
+            return obj;
+        }
+
         public SqlConnection getConnection()
         {
             return connection;
