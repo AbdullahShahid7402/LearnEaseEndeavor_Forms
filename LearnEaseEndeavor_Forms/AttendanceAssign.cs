@@ -13,15 +13,24 @@ namespace LearnEaseEndeavor_Forms
 {
     public partial class AttendanceAssign : Form
     {
+        private string course;
+        private string section;
+        private int subject_id;
+        DBConnection connectionInstance;
+        PageInstance instance;
         public AttendanceAssign()
         {
             InitializeComponent();
-            init();
         }
 
-        private void init()
+        private void SelectCourse(object sender, EventArgs e)
         {
-            SelectaSection.Items.Clear();
+            
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            comboBox1.Items.Clear();
             try
             {
                 UserInstance userInstance = UserInstance.getInstance();
@@ -57,59 +66,7 @@ namespace LearnEaseEndeavor_Forms
                 if (SelectaCourse.Items.Count > 0)
                 {
                     SelectaCourse.SelectedIndex = 0;
-                }
-            }
-            catch (Exception ex)
-            {
-                // Handle exceptions, such as displaying an error message
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
-
-        private void SelectCourse(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            SelectaSection.Items.Clear();
-            try
-            {
-                UserInstance userInstance = UserInstance.getInstance();
-                User user = userInstance.getUser();
-                DBConnection connectionInstance = DBConnection.getInstance();
-                SqlConnection connection = connectionInstance.getConnection();
-                if(user == null)
-                {
-                    Console.WriteLine("user is null");
-                    return;
-                }
-                Console.WriteLine(user.Email);
-
-                string query = "SELECT * FROM [Subject] WHERE [Subject].[email_teacher] = '" + user.Email + "'";
-
-                SqlCommand command = new SqlCommand(query, connection);
-
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                DataTable table = new DataTable();
-                adapter.Fill(table);
-
-                SelectaCourse.Items.Clear();
-
-                // Iterate through the rows of the DataTable and add each course to the ComboBox
-                foreach (DataRow row in table.Rows)
-                {
-                    string courseName = row["name"].ToString(); // Assuming "name" is the column name for the course name
-                    SelectaCourse.Items.Add(courseName);
-                    Console.WriteLine(courseName + "Added");
-                }
-
-                // Optionally, select the first item in the ComboBox
-                if (SelectaCourse.Items.Count > 0)
-                {
-                    SelectaCourse.SelectedIndex = 0;
+                    course = SelectaCourse.SelectedItem.ToString();
                 }
             }
             catch (Exception ex)
@@ -121,69 +78,25 @@ namespace LearnEaseEndeavor_Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            DBConnection connectionInstance = DBConnection.getInstance();
+            SqlConnection connection = connectionInstance.getConnection();
+            string query = "Select [Student].[roll_number],[Student].[name] from [Student] where [Student].[email] in (Select [Subject].[email_student] from [Subject] where [Subject].[name] = '" + course + "' and [Subject].[section] = '" + section + "')";
+            SqlDataAdapter sda = new SqlDataAdapter(query, connection);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dataGridView1.DataSource = dt;
+            subject_id = -1;
+            query = "SELECT * FROM [Subject] WHERE [Subject].[name] = '" + course + "' AND [Subject].[section] = '" + section + "'";
+            sda = new SqlDataAdapter(query, connection);
+            dt = new DataTable();
+            sda.Fill(dt);
+            DataRow row = dt.Rows[0];
+            subject_id = int.Parse(row["id"].ToString());
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            try
-            {
-                string selectedCourse = SelectaCourse.SelectedItem.ToString();
-                string selectedSection = SelectaSection.SelectedItem.ToString();
-
-                // Fetch students for the selected course and section
-                List<Student> students = GetStudentsForCourseAndSection(selectedCourse, selectedSection);
-
-                // Clear existing rows in DataGridView
-                dataGridView1.Rows.Clear();
-
-                // Populate DataGridView with student data
-                foreach (Student student in students)
-                {
-                    dataGridView1.Rows.Add(student.RollNo, student.Name, student.PhoneNo);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private List<Student> GetStudentsForCourseAndSection(string course, string section)
-        {
-            List<Student> students = new List<Student>();
-
-            try
-            {
-                // Fetch students from database based on course and section
-                string query = "Select* from[Student] where[Student].[email] in (Select[Subject].[email_student] from[Subject] where[Subject].[name] = '@Course' and[Subject].[section] = '@Section')";
-                using (SqlConnection connection = DBConnection.getInstance().getConnection())
-                {
-                    connection.Open();
-                    SqlCommand command = new SqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@Course", course);
-                    command.Parameters.AddWithValue("@Section", section);
-                    SqlDataReader reader = command.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        int rollNo = Convert.ToInt32(reader["roll_number"]);
-                        int batch = Convert.ToInt32(reader["batch"]);
-                        string name = reader["name"].ToString();
-                        string phoneNo = reader["phone_number"].ToString();
-                        string email = reader["email"].ToString();
-
-                        students.Add(new Student(rollNo, batch, name, phoneNo, email, ""));
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error fetching students: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            return students;
+           
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -196,7 +109,12 @@ namespace LearnEaseEndeavor_Forms
 
         }
 
-        private void SelectaSection_SelectedIndexChanged(object sender, EventArgs e)
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }
@@ -216,7 +134,7 @@ namespace LearnEaseEndeavor_Forms
                 }
                 Console.WriteLine(user.Email);
 
-                string query = "SELECT * FROM [Subject] WHERE [Subject].[email_teacher] = '" + user.Email + "' and [Subject].[name] = '"+ SelectaCourse.SelectedItem.ToString() +"'";
+                string query = "SELECT * FROM [Subject] WHERE [Subject].[email_teacher] = '" + user.Email + "' and [Subject].[name] = '" + SelectaCourse.SelectedItem.ToString() + "'";
 
                 SqlCommand command = new SqlCommand(query, connection);
 
@@ -230,14 +148,15 @@ namespace LearnEaseEndeavor_Forms
                 foreach (DataRow row in table.Rows)
                 {
                     string section = row["section"].ToString(); // Assuming "name" is the column name for the course name
-                    SelectaSection.Items.Add(section);
+                    comboBox1.Items.Add(section);
                     Console.WriteLine(section + "Added");
                 }
 
                 // Optionally, select the first item in the ComboBox
-                if (SelectaCourse.Items.Count > 0)
+                if (comboBox1.Items.Count > 0)
                 {
-                    SelectaCourse.SelectedIndex = 0;
+                    comboBox1.SelectedIndex = 0;
+                    section = comboBox1.SelectedItem.ToString();
                 }
             }
             catch (Exception ex)
@@ -247,12 +166,59 @@ namespace LearnEaseEndeavor_Forms
             }
         }
 
-        private void label3_Click()
+        private void Save_Click(object sender, EventArgs e)
         {
+            // Initialize connection outside the loop
+            DBConnection connectionInstance = DBConnection.getInstance();
+            SqlConnection connection = connectionInstance.getConnection();
 
-        }
-        private void label4_Click()
-        {
+            try
+            {
+                // Open the connection outside the loop
+                connection.Open();
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (row.Cells["Attendance"] is DataGridViewTextBoxCell textBoxCell && textBoxCell.Value != null)
+                    {
+                        string attendance = textBoxCell.Value.ToString();
+                        string studentName = row.Cells["name"].Value.ToString();
+                        int rollno = int.Parse(row.Cells["roll_number"].Value.ToString());
+                        // Get the current date in the required format
+
+                        // Construct the INSERT query with parameters to avoid SQL injection
+                        string querynew = "INSERT INTO Attendance (status, date, student_id, subject_id) VALUES (@status, GETDATE(), @student_id, @subject_id)";
+
+                        // Create a SqlCommand with the query and connection
+                        SqlCommand command = new SqlCommand(querynew, connection);
+
+                        // Add parameters to the SqlCommand
+                        command.Parameters.AddWithValue("@status", attendance);
+                        command.Parameters.AddWithValue("@student_id", rollno);
+                        command.Parameters.AddWithValue("@subject_id", subject_id);
+
+                        // Execute the INSERT query
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        // Check if any rows were affected
+                        if (rowsAffected > 0)
+                        {
+                            // Rows inserted successfully
+                            Console.WriteLine("Attendance record for student {0} inserted successfully.", studentName);
+                        }
+                        else
+                        {
+                            // No rows were inserted
+                            Console.WriteLine("No rows were inserted for student {0}.", studentName);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle the exception
+                Console.WriteLine("An error occurred while inserting attendance records: " + ex.Message);
+            }
 
         }
     }

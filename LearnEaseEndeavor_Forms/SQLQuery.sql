@@ -43,9 +43,9 @@
 
 --CREATE TABLE [Attendance](
 --    [id] INT IDENTITY(1,1) PRIMARY KEY  NOT NULL,
---	[status] BIT NOT NULL,
+--	[status] VARCHAR(255) NOT NULL,
 --	[date] DATE NOT NULL,
---	[student_email] VARCHAR(255) FOREIGN KEY REFERENCES [User]([email]) NOT NULL,
+--	[student_id] INT FOREIGN KEY REFERENCES [Student]([roll_number]) NOT NULL,
 --	[subject_id] INT FOREIGN KEY REFERENCES [Subject]([id]) NOT NULL,
 --);
 
@@ -69,4 +69,8 @@ select * from [Teacher]
 INSERT INTO [Subject] ([name], [section], [email_student], [email_teacher])
 VALUES ('Software Engineering', 'F', 'i210721@nu.edu.pk', 'sidra.khalid@nu.edu.pk');
 
-Select * from [Student] where [Student].[email] in (Select [Subject].[email_student] from [Subject] where [Subject].[name] = 'Software Engineering' and [Subject].[section] = 'F')
+Select [Student].[roll_number],[Student].[name],0 as attendance from [Student] where [Student].[email] in (Select [Subject].[email_student] from [Subject] where [Subject].[name] = 'Software Engineering' and [Subject].[section] = 'F')
+
+INSERT INTO Attendance (status, date, student_id, subject_id) VALUES ('Present', '2024-03-25', 12345, 1);
+
+select *  from [Attendance]
