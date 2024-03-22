@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace LearnEaseEndeavor_Forms
 {
     public partial class AttendanceAssign : Form
     {
+        DBConnection connectionInstance;
+        PageInstance instance;
         public AttendanceAssign()
         {
             InitializeComponent();
@@ -19,7 +22,10 @@ namespace LearnEaseEndeavor_Forms
 
         private void SelectCourse(object sender, EventArgs e)
         {
+            connectionInstance = DBConnection.getInstance();
+            SqlConnection connection = connectionInstance.getConnection();
 
+            string query = "SELECT * FROM [Subject] WHERE [Subject].[email_teacher] = 'sidra.khalid@nu.edu.pk'";
 
         }
 

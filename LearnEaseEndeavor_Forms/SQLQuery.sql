@@ -10,6 +10,7 @@
 
 --CREATE TABLE [Student] (
 --    [roll_number] INT IDENTITY(1,1) PRIMARY KEY,
+--    [name] VARCHAR(255) NOT NULL,
 --    [phone_number] VARCHAR(20) NOT NULL,
 --	[batch] INT NOT NULL,
 --    [email] VARCHAR(255) FOREIGN KEY REFERENCES [User]([email]) NOT NULL
@@ -17,6 +18,7 @@
 
 --CREATE TABLE [Teacher] (
 --    [roll_number] INT IDENTITY(1,1) PRIMARY KEY,
+--    [name] VARCHAR(255) NOT NULL,
 --    [phone_number] VARCHAR(20) NOT NULL,
 --	[visiting] BIT NOT NULL,
 --    [email] VARCHAR(255) FOREIGN KEY REFERENCES [User]([email]) NOT NULL
@@ -51,4 +53,10 @@
 INSERT INTO [User] ([email], [password], [type])
 VALUES ('abdullahshahid210@gmail.com', 'open sesame','Admin');
 
-SELECT * FROM [User] where [email] = 'email' and [password] = 'password'
+INSERT INTO [User] ([email], [password], [type])
+VALUES ('i210721@nu.edu.pk', 'open sesame','Student');
+
+INSERT INTO [Student] ([name], [phone_number], [batch], [email])
+VALUES ('Abdullah Shahid Butt','012392912312',21,'i210721@nu.edu.pk');
+
+select * from [Student]

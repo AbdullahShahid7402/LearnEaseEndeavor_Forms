@@ -13,9 +13,9 @@ namespace LearnEaseEndeavor_Forms
 {
     public partial class Login : Form
     {
-
-        SqlConnection connection = new SqlConnection(@"Data Source=ABDULLAH-LAPTOP\SQLEXPRESS;Initial Catalog=LEE;Integrated Security=True");
+        DBConnection connectionInstance;
         PageInstance instance;
+        User user;
 
         public Login()
         {
@@ -38,35 +38,31 @@ namespace LearnEaseEndeavor_Forms
 
         private void Validate_Click(object sender, EventArgs e)
         {
+            connectionInstance = DBConnection.getInstance();
+            SqlConnection connection = connectionInstance.getConnection();
+            UserInstance userInstance = UserInstance.getInstance();
             string email, password;
             email = EmailTextBox.Text;
             password = PasswordTextBox.Text;
-            try 
+            ErrorLable.Text = "";
+            user = userInstance.setUser(email, password);
+            if (user == null)
+                ErrorLable.Text = ":: User Not Found ::";
+            else
             {
-                string query = "SELECT* FROM [User] where [email] = '" + email + "' AND [password] = '" + password + "'";
-                SqlDataAdapter sda = new SqlDataAdapter(query, connection);
-                DataTable dtable = new DataTable();
-                sda.Fill(dtable);
-                if(dtable.Rows.Count>0)
+                if (user is Student)
                 {
-                    instance = PageInstance.getInstance();
-                    ErrorLable.Text = "";
-                    AttendanceAssign form = instance.getAttendanceAssign();
+                    Student s = (Student)user;
+                    ErrorLable.Text = ":: Welcome " + s.Name + " ::";
+                }
+                if (user is Teacher)
+                {
+                    Teacher t = (Teacher)user;
+                    ErrorLable.Text = ":: Welcome " + t.Name + " ::";
+                    Form form = new AttendanceAssign();
                     form.Show();
                     this.Hide();
                 }
-                else
-                {
-                    ErrorLable.Text = "No Entry Found";
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Error");
-            }
-            finally
-            {
-                connection.Close();
             }
         }
 

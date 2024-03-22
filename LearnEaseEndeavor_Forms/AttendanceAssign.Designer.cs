@@ -59,7 +59,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(183, 28);
+            this.label1.Location = new System.Drawing.Point(183, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 16);
             this.label1.TabIndex = 1;
@@ -82,7 +82,7 @@
             this.SelectaCourse.BackColor = System.Drawing.Color.White;
             this.SelectaCourse.Font = new System.Drawing.Font("Segoe UI Emoji", 9F);
             this.SelectaCourse.FormattingEnabled = true;
-            this.SelectaCourse.Location = new System.Drawing.Point(48, 26);
+            this.SelectaCourse.Location = new System.Drawing.Point(48, 27);
             this.SelectaCourse.Name = "SelectaCourse";
             this.SelectaCourse.Size = new System.Drawing.Size(416, 24);
             this.SelectaCourse.TabIndex = 0;
@@ -107,7 +107,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label2.Font = new System.Drawing.Font("Segoe UI Emoji", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(580, 29);
+            this.label2.Location = new System.Drawing.Point(631, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 16);
             this.label2.TabIndex = 4;
@@ -246,7 +246,7 @@
             this.checkBox2.TabIndex = 11;
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
-            // ManageAttendance
+            // AttendanceAssign
             // 
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1239, 540);
@@ -257,7 +257,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.checkBox1);
-            this.Name = "ManageAttendance";
+            this.Name = "AttendanceAssign";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
