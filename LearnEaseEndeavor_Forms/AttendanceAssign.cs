@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LearnEaseEndeavor_Forms
 {
-    public partial class ManageAttendance : Form
+    public partial class AttendanceAssign : Form
     {
-        public ManageAttendance()
+        public AttendanceAssign()
         {
             InitializeComponent();
         }

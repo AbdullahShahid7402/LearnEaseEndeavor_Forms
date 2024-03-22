@@ -11,7 +11,8 @@ namespace LearnEaseEndeavor_Forms
     class PageInstance
     {
         private static PageInstance obj = null;
-        public Login loginInstance = null;
+        private Login loginInstance = null;
+        private AttendanceAssign AttendanceAssignInstance = null;
 
         private PageInstance() { }
 
@@ -32,9 +33,22 @@ namespace LearnEaseEndeavor_Forms
                 loginInstance = new Login();
             return loginInstance;
         }
+
         public void resetLogin()
         {
             loginInstance = null;
+        }
+
+        public AttendanceAssign getAttendanceAssign()
+        {
+            if (AttendanceAssignInstance == null)
+                AttendanceAssignInstance = new AttendanceAssign();
+            return AttendanceAssignInstance;
+        }
+
+        public void resetAttendanceAssign()
+        {
+            AttendanceAssignInstance = null;
         }
     }
 }

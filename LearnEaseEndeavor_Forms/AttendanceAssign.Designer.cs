@@ -1,6 +1,6 @@
 ﻿namespace LearnEaseEndeavor_Forms
 {
-    partial class ManageAttendance
+    partial class AttendanceAssign
     {
         /// <summary>
         /// Required designer variable.

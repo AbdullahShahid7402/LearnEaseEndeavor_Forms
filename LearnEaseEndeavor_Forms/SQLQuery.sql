@@ -46,3 +46,9 @@
 --	[student_email] VARCHAR(255) FOREIGN KEY REFERENCES [User]([email]) NOT NULL,
 --	[subject_id] INT FOREIGN KEY REFERENCES [Subject]([id]) NOT NULL,
 --);
+
+
+INSERT INTO [User] ([email], [password], [type])
+VALUES ('abdullahshahid210@gmail.com', 'open sesame','Admin');
+
+SELECT * FROM [User] where [email] = 'email' and [password] = 'password'
