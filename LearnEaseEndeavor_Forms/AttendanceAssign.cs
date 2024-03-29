@@ -25,7 +25,7 @@ namespace LearnEaseEndeavor_Forms
 
         private void SelectCourse(object sender, EventArgs e)
         {
-            
+            course = SelectaCourse.SelectedItem.ToString();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -44,7 +44,7 @@ namespace LearnEaseEndeavor_Forms
                 }
                 Console.WriteLine(user.Email);
 
-                string query = "SELECT DISTINCT [name] FROM [Subject] WHERE [email_teacher] = '" + user.Email + "'";
+                string query = "SELECT [name],[id] FROM [Course] WHERE [Course].id in (SELECT DISTINCT [Course_id] FROM [Study] WHERE [email_teacher] = '" + user.Email + "')";
 
                 SqlCommand command = new SqlCommand(query, connection);
 
@@ -80,18 +80,18 @@ namespace LearnEaseEndeavor_Forms
         {
             DBConnection connectionInstance = DBConnection.getInstance();
             SqlConnection connection = connectionInstance.getConnection();
-            string query = "Select [Student].[roll_number],[Student].[name] from [Student] where [Student].[email] in (Select [Subject].[email_student] from [Subject] where [Subject].[name] = '" + course + "' and [Subject].[section] = '" + section + "')";
+            string query = "Select [roll_number], [name] from [Student] where [email] in (SELECT [Study].[email_student] from [Study] where [Study].[section] = '" + section + "' and [Study].[course_id] in (select [id] from [Course] where [name]='"+ course +"'))";
             SqlDataAdapter sda = new SqlDataAdapter(query, connection);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dataGridView1.DataSource = dt;
             subject_id = -1;
-            query = "SELECT * FROM [Subject] WHERE [Subject].[name] = '" + course + "' AND [Subject].[section] = '" + section + "'";
+            query = "SELECT [course_id] from [Study] where [Study].[section] = '" + section + "' and [Study].[course_id] in (select [id] from [Course] where [name]='"+ course +"')";
             sda = new SqlDataAdapter(query, connection);
             dt = new DataTable();
             sda.Fill(dt);
             DataRow row = dt.Rows[0];
-            subject_id = int.Parse(row["id"].ToString());
+            subject_id = int.Parse(row["course_id"].ToString());
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -134,7 +134,7 @@ namespace LearnEaseEndeavor_Forms
                 }
                 Console.WriteLine(user.Email);
 
-                string query = "SELECT DISTINCT [section] FROM [Subject] WHERE [Subject].[email_teacher] = '" + user.Email + "' and [Subject].[name] = '" + SelectaCourse.SelectedItem.ToString() + "'";
+                string query = "SELECT DISTINCT [section] FROM [Study] where [course_id] in ((SELECT [id] FROM [Course] WHERE [Course].id in (SELECT DISTINCT [Course_id] FROM [Study] WHERE [email_teacher] = '" + user.Email + "')))";
 
                 SqlCommand command = new SqlCommand(query, connection);
 
@@ -220,6 +220,11 @@ namespace LearnEaseEndeavor_Forms
                 Console.WriteLine("An error occurred while inserting attendance records: " + ex.Message);
             }
 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            section = comboBox1.SelectedItem.ToString();
         }
     }
 

@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Attendance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel4 = new System.Windows.Forms.Panel();
             this.Save = new System.Windows.Forms.Button();
-            this.Attendance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -118,6 +118,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(324, 21);
             this.comboBox1.TabIndex = 3;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
@@ -132,6 +133,15 @@
             this.dataGridView1.Size = new System.Drawing.Size(939, 333);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Attendance
+            // 
+            this.Attendance.DataPropertyName = "attendance";
+            this.Attendance.HeaderText = "mark Attendance";
+            this.Attendance.MinimumWidth = 30;
+            this.Attendance.Name = "Attendance";
+            this.Attendance.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Attendance.Width = 200;
             // 
             // checkBox1
             // 
@@ -202,15 +212,6 @@
             this.Save.Text = "Save";
             this.Save.UseVisualStyleBackColor = true;
             this.Save.Click += new System.EventHandler(this.Save_Click);
-            // 
-            // Attendance
-            // 
-            this.Attendance.DataPropertyName = "attendance";
-            this.Attendance.HeaderText = "mark Attendance";
-            this.Attendance.MinimumWidth = 30;
-            this.Attendance.Name = "Attendance";
-            this.Attendance.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Attendance.Width = 200;
             // 
             // AttendanceAssign
             // 
