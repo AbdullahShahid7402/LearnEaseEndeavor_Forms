@@ -55,12 +55,20 @@ namespace LearnEaseEndeavor_Forms
                     Student s = (Student)user;
                     ErrorLable.Text = ":: Welcome " + s.Name + " ::";
                 }
-                if (user is Teacher)
+                else if (user is Teacher)
                 {
                     Teacher t = (Teacher)user;
                     ErrorLable.Text = ":: Welcome " + t.Name + " ::";
                     //Form form = new AttendanceAssign();
                     Form form = new AssignmentsAssign();
+                    form.Show();
+                    Console.WriteLine("Scene shifted");
+                    this.Hide();
+                }
+                else
+                {
+                    ErrorLable.Text = ":: Welcome Admin ::";
+                    Form form = new AddUser();
                     form.Show();
                     Console.WriteLine("Scene shifted");
                     this.Hide();

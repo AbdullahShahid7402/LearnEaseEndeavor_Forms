@@ -92,6 +92,10 @@ namespace LearnEaseEndeavor_Forms
                         }
                         
                     }
+                    else if ( userType == "Admin")
+                    {
+                        user = new User(email, password);
+                    }
 
                     // Return the user object here
                     return user;

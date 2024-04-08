@@ -106,4 +106,10 @@ Select [roll_number], [name] from [Student] where [email] in (SELECT [Study].[em
 
 SELECT [Study].[course_id] from [Study] where [Study].[section] = 'G' and [Study].[course_id] in (select [id] from [Course] where [name]='Software Engineering')
 
-select * from Assignment
+
+SELECT * from [Study] where [Study].[section] = 'F' and [Study].[course_id] in (select [id] from [Course] where [name]='Software Engineering')
+
+select * from [User]
+select * from [Teacher]
+
+delete from [User] where [User].email = 'i211594'
