@@ -40,6 +40,8 @@ CREATE TABLE [Study] (
 CREATE TABLE [Assignment](
     [id] INT IDENTITY(1,1) PRIMARY KEY  NOT NULL,
 	[name] VARCHAR(255)  NOT NULL,
+	[submitted] BINARY NOT NULL,
+	[submission] VARCHAR(500) NOT NULL,
   [description] VARCHAR(255)  NOT NULL,
 	[total] INT  NOT NULL,
 	[obtained] INT  NOT NULL,
@@ -103,3 +105,5 @@ SELECT DISTINCT [section] FROM [Study] where [course_id] in ((SELECT [id] FROM [
 Select [roll_number], [name] from [Student] where [email] in (SELECT [Study].[email_student] from [Study] where [Study].[section] = 'G' and [Study].[course_id] in (select [id] from [Course] where [name]='Software Engineering'))
 
 SELECT [Study].[course_id] from [Study] where [Study].[section] = 'G' and [Study].[course_id] in (select [id] from [Course] where [name]='Software Engineering')
+
+select * from Assignment

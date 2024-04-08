@@ -46,7 +46,7 @@ namespace LearnEaseEndeavor_Forms
                 }
                 Console.WriteLine(user.Email);
 
-                string query = "SELECT DISTINCT [name] FROM [Subject] WHERE [Subject].[email_teacher] = '" + user.Email + "'";
+                string query = "SELECT [name],[id] FROM [Course] WHERE [Course].id in (SELECT DISTINCT [Course_id] FROM [Study] WHERE [email_teacher] = '" + user.Email + "')";
 
                 SqlCommand command = new SqlCommand(query, connection);
 
@@ -93,7 +93,7 @@ namespace LearnEaseEndeavor_Forms
                 }
                 Console.WriteLine(user.Email);
 
-                string query = "SELECT DISTINCT [section] FROM [Subject] WHERE [Subject].[email_teacher] = '" + user.Email + "' and [Subject].[name] = '" + SelectaCourse.SelectedItem.ToString() + "'";
+                string query = "SELECT DISTINCT [section] FROM [Study] where [course_id] in ((SELECT [id] FROM [Course] WHERE [Course].id in (SELECT DISTINCT [Course_id] FROM [Study] WHERE [email_teacher] = '" + user.Email + "')))";
 
                 SqlCommand command = new SqlCommand(query, connection);
 
@@ -147,19 +147,18 @@ namespace LearnEaseEndeavor_Forms
             DBConnection connectionInstance = DBConnection.getInstance();
             SqlConnection connection = connectionInstance.getConnection();
 
-            string query = "SELECT * FROM [Subject] WHERE [Subject].[name] = '" + course + "' AND [Subject].[section] = '" + section + "'";
+            string query = "SELECT * from [Study] where [Study].[section] = '" + section + "' and [Study].[course_id] in (select [id] from [Course] where [name]='" + course + "')";
             SqlDataAdapter sda = new SqlDataAdapter(query, connection);
             DataTable dt = new DataTable();
             sda.Fill(dt);
 
             // Check if any rows were returned
-            if (dt.Rows.Count > 0)
+            foreach (DataRow row in dt.Rows)
             {
-                DataRow row = dt.Rows[0];
                 int subject_id = int.Parse(row["id"].ToString());
 
                 // Construct the INSERT query
-                string querynew = "INSERT INTO Assignment (name, description, total, obtained, Weightage, subject_id) VALUES ('" + textBox1.Text + "', '" + textBox2.Text + "', " + textBox3.Text + ", 0, " + textBox4.Text + ", " + subject_id + ")";
+                string querynew = "INSERT INTO Assignment (name, description, total, obtained, Weightage, study_id, submitted, submission) VALUES ('" + textBox1.Text + "', '" + textBox2.Text + "', " + textBox3.Text + ", 0, " + textBox4.Text + ", " + subject_id + ", 0, '')";
 
                 // Create a SqlCommand with the query and connection
                 SqlCommand command = new SqlCommand(querynew, connection);

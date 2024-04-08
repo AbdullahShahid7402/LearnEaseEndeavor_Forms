@@ -59,8 +59,8 @@ namespace LearnEaseEndeavor_Forms
                 {
                     Teacher t = (Teacher)user;
                     ErrorLable.Text = ":: Welcome " + t.Name + " ::";
-                    Form form = new AttendanceAssign();
-                    //Form form = new AssignmentsAssign();
+                    //Form form = new AttendanceAssign();
+                    Form form = new AssignmentsAssign();
                     form.Show();
                     Console.WriteLine("Scene shifted");
                     this.Hide();
