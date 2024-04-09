@@ -39,6 +39,7 @@ namespace LearnEaseEndeavor_Forms
                 User user = userInstance.getUser();
                 DBConnection connectionInstance = DBConnection.getInstance();
                 SqlConnection connection = connectionInstance.getConnection();
+                connection.Open();
                 if (user == null)
                 {
                     Console.WriteLine("user is null");
@@ -86,6 +87,7 @@ namespace LearnEaseEndeavor_Forms
                 User user = userInstance.getUser();
                 DBConnection connectionInstance = DBConnection.getInstance();
                 SqlConnection connection = connectionInstance.getConnection();
+                connection.Open();
                 if (user == null)
                 {
                     Console.WriteLine("user is null");
@@ -146,6 +148,7 @@ namespace LearnEaseEndeavor_Forms
             // Get the subject ID corresponding to the selected course and section
             DBConnection connectionInstance = DBConnection.getInstance();
             SqlConnection connection = connectionInstance.getConnection();
+            connection.Open();
 
             string query = "SELECT * from [Study] where [Study].[section] = '" + section + "' and [Study].[course_id] in (select [id] from [Course] where [name]='" + course + "')";
             SqlDataAdapter sda = new SqlDataAdapter(query, connection);
@@ -155,6 +158,8 @@ namespace LearnEaseEndeavor_Forms
             // Check if any rows were returned
             foreach (DataRow row in dt.Rows)
             {
+                connection.Open();
+
                 int subject_id = int.Parse(row["id"].ToString());
 
                 // Construct the INSERT query
