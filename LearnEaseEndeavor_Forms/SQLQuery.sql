@@ -113,3 +113,7 @@ select * from [User]
 select * from [Teacher]
 
 delete from [User] where [User].email = 'i211594'
+
+SELECT [Study].*,[Course].[name] FROM [Course] join [Study] on [Study].course_id= [Course].[id] WHERE [email_student] = 'i210721@nu.edu.pk'
+
+SELECT [Assignment].* from [Study] join [Assignment] on [Assignment].study_id = [Study].[id]
