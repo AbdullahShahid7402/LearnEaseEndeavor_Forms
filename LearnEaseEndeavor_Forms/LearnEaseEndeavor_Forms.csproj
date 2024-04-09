@@ -71,6 +71,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="MarkAssignment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MarkAssignment.Designer.cs">
+      <DependentUpon>MarkAssignment.cs</DependentUpon>
+    </Compile>
     <Compile Include="PageInstance.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarkAssignment.resx">
+      <DependentUpon>MarkAssignment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

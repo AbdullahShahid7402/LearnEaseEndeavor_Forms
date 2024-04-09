@@ -116,4 +116,17 @@ delete from [User] where [User].email = 'i211594'
 
 SELECT [Study].*,[Course].[name] FROM [Course] join [Study] on [Study].course_id= [Course].[id] WHERE [email_student] = 'i210721@nu.edu.pk'
 
-SELECT [Assignment].* from [Study] join [Assignment] on [Assignment].study_id = [Study].[id]
+SELECT [Assignment].* from [Study] join [Assignment] on [Assignment].study_id = [Study].[id] where [Study].[email_student] = 'i210721@nu.edu.pk' and [Assignment].submitted = 0
+
+UPDATE [Assignment] SET [submitted]= 1, [description] = 'do iteration 1' WHERE [id] = 1;
+
+select* from Assignment
+
+SELECT DISTINCT [Course].[name] FROM [Course] join [Study] on [Study].course_id= [Course].[id] WHERE [email_teacher] = 'sidra.khalid@nu.edu.pk'
+
+SELECT Distinct [Study].section FROM [Course] join [Study] on [Study].course_id= [Course].[id] WHERE [Course].[name] = 'Software Engineering'
+
+SELECT [Assignment].total,[Assignment].Weightage,[Assignment].submission,[Assignment].id  FROM [Assignment] join [Study] on [Study].id = [Assignment].[study_id] join [Course] on [Course].id = [Study].[course_id] where [section] = 'F' and [Course].[name] = 'Software Engineering' and [submitted] = 1
+
+UPDATE [Assignment] SET [obtained]= 1 WHERE [id] = 1;
+
