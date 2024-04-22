@@ -57,6 +57,14 @@ CREATE TABLE [Attendance](
 	[course_id] INT FOREIGN KEY REFERENCES [Course]([id]) NOT NULL,
 );
 
+CREATE TABLE [Announcement](
+	[id] INT IDENTITY(1,1) PRIMARY KEY  NOT NULL,
+	[description] varchar(1000) NOT NULL,
+	[date] date NOT NULL,
+	[course_id] INT FOREIGN KEY REFERENCES [Course]([id]) NOT NULL,
+	[teacher_id] INT FOREIGN KEY REFERENCES [teacher]([roll_number]) NOT NULL,
+);
+
 
 INSERT INTO [User] ([email], [password], [type])
 VALUES ('abdullahshahid210@gmail.com', 'open sesame','Admin');

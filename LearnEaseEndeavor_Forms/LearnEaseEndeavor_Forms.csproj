@@ -58,6 +58,12 @@
     <Compile Include="AdminHome.Designer.cs">
       <DependentUpon>AdminHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="AnnouncementAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnnouncementAdd.Designer.cs">
+      <DependentUpon>AnnouncementAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="AssignmentsAssign.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminHome.resx">
       <DependentUpon>AdminHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnnouncementAdd.resx">
+      <DependentUpon>AnnouncementAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AssignmentsAssign.resx">
       <DependentUpon>AssignmentsAssign.cs</DependentUpon>

@@ -46,5 +46,12 @@ namespace LearnEaseEndeavor_Forms
             form.Show();
             this.Hide();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form form = new AnnouncementAdd();
+            form.Show();
+            this.Hide();
+        }
     }
 }

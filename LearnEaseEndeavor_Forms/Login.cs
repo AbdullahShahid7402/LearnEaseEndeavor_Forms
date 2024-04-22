@@ -54,7 +54,7 @@ namespace LearnEaseEndeavor_Forms
                 {
                     Student s = (Student)user;
                     ErrorLable.Text = ":: Welcome " + s.Name + " ::";
-                    Form form = new SubmitAssignment();
+                    Form form = new StudentHome();
                     form.Show();
                     Console.WriteLine("Scene shifted");
                     this.Hide();
@@ -65,7 +65,7 @@ namespace LearnEaseEndeavor_Forms
                     ErrorLable.Text = ":: Welcome " + t.Name + " ::";
                     //Form form = new AttendanceAssign();
                     //Form form = new AssignmentsAssign();
-                    Form form = new MarkAssignment();
+                    Form form = new TeacherHome();
                     form.Show();
                     Console.WriteLine("Scene shifted");
                     this.Hide();
@@ -88,7 +88,7 @@ namespace LearnEaseEndeavor_Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
     }
 }
