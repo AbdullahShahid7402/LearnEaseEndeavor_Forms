@@ -44,6 +44,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel4 = new System.Windows.Forms.Panel();
             this.Save = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -155,6 +156,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Teal;
+            this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Location = new System.Drawing.Point(2, 1);
@@ -213,6 +215,16 @@
             this.Save.UseVisualStyleBackColor = true;
             this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(83, 195);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 10;
+            this.button3.Text = "Home";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // AttendanceAssign
             // 
             this.BackColor = System.Drawing.Color.White;
@@ -255,5 +267,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button Save;
         private System.Windows.Forms.DataGridViewTextBoxColumn Attendance;
+        private System.Windows.Forms.Button button3;
     }
 }

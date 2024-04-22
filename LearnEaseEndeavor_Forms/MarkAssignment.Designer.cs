@@ -36,6 +36,7 @@ namespace LearnEaseEndeavor_Forms
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Obtained = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -44,7 +45,7 @@ namespace LearnEaseEndeavor_Forms
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel4 = new System.Windows.Forms.Panel();
             this.Save = new System.Windows.Forms.Button();
-            this.Obtained = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -134,9 +135,19 @@ namespace LearnEaseEndeavor_Forms
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // Obtained
+            // 
+            this.Obtained.DataPropertyName = "Obtained";
+            this.Obtained.HeaderText = "Obtained";
+            this.Obtained.MinimumWidth = 30;
+            this.Obtained.Name = "Obtained";
+            this.Obtained.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Obtained.Width = 200;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Teal;
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Location = new System.Drawing.Point(1, -2);
@@ -202,14 +213,15 @@ namespace LearnEaseEndeavor_Forms
             this.Save.UseVisualStyleBackColor = true;
             this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
-            // Obtained
+            // button1
             // 
-            this.Obtained.DataPropertyName = "Obtained";
-            this.Obtained.HeaderText = "Obtained";
-            this.Obtained.MinimumWidth = 30;
-            this.Obtained.Name = "Obtained";
-            this.Obtained.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Obtained.Width = 200;
+            this.button1.Location = new System.Drawing.Point(83, 204);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Home";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MarkAssignment
             // 
@@ -253,5 +265,6 @@ namespace LearnEaseEndeavor_Forms
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button Save;
         private System.Windows.Forms.DataGridViewTextBoxColumn Obtained;
+        private System.Windows.Forms.Button button1;
     }
 }

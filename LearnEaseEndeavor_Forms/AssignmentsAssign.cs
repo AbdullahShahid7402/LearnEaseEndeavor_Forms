@@ -280,5 +280,12 @@ namespace LearnEaseEndeavor_Forms
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form form = new TeacherHome();
+            form.Show();
+            this.Hide();
+        }
     }
 }

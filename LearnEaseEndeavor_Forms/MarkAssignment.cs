@@ -206,5 +206,12 @@ namespace LearnEaseEndeavor_Forms
                 Console.WriteLine("An error occurred while inserting attendance records: " + ex.Message);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form form = new TeacherHome();
+            form.Show();
+            this.Hide();
+        }
     }
 }
