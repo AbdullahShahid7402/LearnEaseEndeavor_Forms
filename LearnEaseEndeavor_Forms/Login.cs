@@ -73,7 +73,7 @@ namespace LearnEaseEndeavor_Forms
                 else
                 {
                     ErrorLable.Text = ":: Welcome Admin ::";
-                    Form form = new AddUser();
+                    Form form = new AdminHome();
                     form.Show();
                     Console.WriteLine("Scene shifted");
                     this.Hide();
@@ -84,6 +84,11 @@ namespace LearnEaseEndeavor_Forms
         private void Login_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

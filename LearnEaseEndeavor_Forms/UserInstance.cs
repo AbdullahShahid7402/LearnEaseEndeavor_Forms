@@ -30,6 +30,11 @@ namespace LearnEaseEndeavor_Forms
             return user;
         }
 
+        public void Nullify()
+        {
+            user = null;
+        }
+
         public User setUser(string email, string password)
         {
             DBConnection connectionInstance = DBConnection.getInstance();

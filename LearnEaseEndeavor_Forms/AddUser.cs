@@ -192,5 +192,17 @@ namespace LearnEaseEndeavor_Forms
         {
 
         }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form form = new AdminHome();
+            form.Show();
+            this.Hide();
+        }
     }
 }
