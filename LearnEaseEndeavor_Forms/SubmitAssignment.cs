@@ -183,5 +183,12 @@ namespace LearnEaseEndeavor_Forms
                 connection.Close();
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form form = new StudentHome();
+            form.Show();
+            this.Hide();
+        }
     }
 }
