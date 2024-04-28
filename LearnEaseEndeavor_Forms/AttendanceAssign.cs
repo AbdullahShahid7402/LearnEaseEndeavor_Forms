@@ -175,7 +175,8 @@ namespace LearnEaseEndeavor_Forms
             try
             {
                 // Open the connection outside the loop
-                connection.Open();
+                if (connection.State != ConnectionState.Open)
+                    connection.Open();
 
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {

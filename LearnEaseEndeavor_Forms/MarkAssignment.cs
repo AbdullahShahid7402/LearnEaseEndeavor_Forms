@@ -38,7 +38,8 @@ namespace LearnEaseEndeavor_Forms
             User user = userInstance.getUser();
             DBConnection connectionInstance = DBConnection.getInstance();
             SqlConnection connection = connectionInstance.getConnection();
-            connection.Open();
+            if (connection.State != ConnectionState.Open)
+                connection.Open();
             try
             {
                 if (user == null)
@@ -91,7 +92,8 @@ namespace LearnEaseEndeavor_Forms
             User user = userInstance.getUser();
             DBConnection connectionInstance = DBConnection.getInstance();
             SqlConnection connection = connectionInstance.getConnection();
-            connection.Open();
+            if (connection.State != ConnectionState.Open)
+                connection.Open();
             try
             {
                 if (user == null)
@@ -167,7 +169,8 @@ namespace LearnEaseEndeavor_Forms
             try
             {
                 // Open the connection outside the loop
-                connection.Open();
+                if (connection.State != ConnectionState.Open)
+                    connection.Open();
 
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {

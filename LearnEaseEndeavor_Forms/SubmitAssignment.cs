@@ -32,7 +32,8 @@ namespace LearnEaseEndeavor_Forms
             User user = userInstance.getUser();
             DBConnection connectionInstance = DBConnection.getInstance();
             SqlConnection connection = connectionInstance.getConnection();
-            connection.Open();
+            if(connection.State != ConnectionState.Open)
+                connection.Open();
             try
             {
                 if (user == null)
@@ -87,7 +88,8 @@ namespace LearnEaseEndeavor_Forms
             SqlConnection connection = connectionInstance.getConnection();
             try
             {
-                connection.Open();
+                if(connection.State != ConnectionState.Open)
+                    connection.Open();
                 if (user == null)
                 {
                     Console.WriteLine("user is null");
@@ -155,7 +157,8 @@ namespace LearnEaseEndeavor_Forms
             try
             {
                 // Open the connection
-                connection.Open();
+                if(connection.State != ConnectionState.Open)
+                    connection.Open();
 
                 // Execute the INSERT query
                 int rowsAffected = command.ExecuteNonQuery();

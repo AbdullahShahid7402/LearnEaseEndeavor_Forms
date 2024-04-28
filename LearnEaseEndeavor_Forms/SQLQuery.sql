@@ -138,3 +138,6 @@ SELECT [Assignment].total,[Assignment].Weightage,[Assignment].submission,[Assign
 
 UPDATE [Assignment] SET [obtained]= 1 WHERE [id] = 1;
 
+SELECT DISTINCT [Course].[name], [Course].[id] FROM [Course] join [Study] on [Study].course_id= [Course].[id] WHERE [email_teacher] = 'sidra.khalid@nu.edu.pk'
+
+select *  from Announcement
