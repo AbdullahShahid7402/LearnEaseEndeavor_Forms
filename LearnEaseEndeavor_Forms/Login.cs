@@ -45,6 +45,14 @@ namespace LearnEaseEndeavor_Forms
             email = EmailTextBox.Text;
             password = PasswordTextBox.Text;
             ErrorLable.Text = "";
+            if(EmailTextBox.Text.Length>30 || EmailTextBox.Text.Length < 1)
+            {
+            ErrorLable.Text += " ::Email Length out of bounds:: ";
+            }
+            if (PasswordTextBox.Text.Length > 15 || PasswordTextBox.Text.Length < 1)
+            {
+                ErrorLable.Text += " ::Password Length out of bounds:: ";
+            }
             user = userInstance.setUser(email, password);
             if (user == null)
                 ErrorLable.Text = ":: User Not Found ::";
