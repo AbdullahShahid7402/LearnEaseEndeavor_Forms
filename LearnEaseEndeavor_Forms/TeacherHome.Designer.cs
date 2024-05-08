@@ -39,9 +39,11 @@ namespace LearnEaseEndeavor_Forms
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(713, 415);
+            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button2.Location = new System.Drawing.Point(1070, 638);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(112, 35);
             this.button2.TabIndex = 5;
             this.button2.Text = "Logout";
             this.button2.UseVisualStyleBackColor = true;
@@ -49,9 +51,12 @@ namespace LearnEaseEndeavor_Forms
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(325, 125);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(488, 192);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 47);
+            this.button1.Size = new System.Drawing.Size(212, 73);
             this.button1.TabIndex = 4;
             this.button1.Text = "Assignment Assign";
             this.button1.UseVisualStyleBackColor = true;
@@ -61,18 +66,22 @@ namespace LearnEaseEndeavor_Forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.SlateGray;
-            this.label1.Location = new System.Drawing.Point(320, 43);
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(480, 66);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(165, 25);
+            this.label1.Size = new System.Drawing.Size(240, 37);
             this.label1.TabIndex = 3;
             this.label1.Text = "Teacher Home";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(325, 202);
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Location = new System.Drawing.Point(488, 311);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(141, 47);
+            this.button3.Size = new System.Drawing.Size(212, 72);
             this.button3.TabIndex = 6;
             this.button3.Text = "Attendance Assign";
             this.button3.UseVisualStyleBackColor = true;
@@ -80,9 +89,12 @@ namespace LearnEaseEndeavor_Forms
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(325, 280);
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.Location = new System.Drawing.Point(488, 431);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(141, 47);
+            this.button4.Size = new System.Drawing.Size(212, 72);
             this.button4.TabIndex = 7;
             this.button4.Text = "Mark Assignment";
             this.button4.UseVisualStyleBackColor = true;
@@ -90,9 +102,12 @@ namespace LearnEaseEndeavor_Forms
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(325, 357);
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.Location = new System.Drawing.Point(488, 549);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(141, 47);
+            this.button5.Size = new System.Drawing.Size(212, 72);
             this.button5.TabIndex = 8;
             this.button5.Text = "Add Announcement";
             this.button5.UseVisualStyleBackColor = true;
@@ -100,15 +115,18 @@ namespace LearnEaseEndeavor_Forms
             // 
             // TeacherHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.Teal;
+            this.ClientSize = new System.Drawing.Size(1200, 692);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "TeacherHome";
             this.Text = "TeacherHome";
             this.ResumeLayout(false);

@@ -14,7 +14,7 @@ namespace LearnEaseEndeavor_Forms
 
         private DBConnection() 
         {
-            connection = new SqlConnection(@"Data Source=DESKTOP-E74CTO0;Initial Catalog=LEE;Integrated Security=True");
+            connection = new SqlConnection(@"Data Source=HQ-10051902L2\SQLEXPRESS02;Initial Catalog=LEE;Integrated Security=True;Encrypt=False");
         }
         
         public static DBConnection getInstance()
