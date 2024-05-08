@@ -44,11 +44,12 @@ namespace LearnEaseEndeavor_Forms
             // EmailPrompt
             // 
             this.EmailPrompt.AutoSize = true;
-            this.EmailPrompt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmailPrompt.Font = new System.Drawing.Font("Yu Gothic UI", 20F, System.Drawing.FontStyle.Bold);
+            this.EmailPrompt.ForeColor = System.Drawing.Color.White;
             this.EmailPrompt.Location = new System.Drawing.Point(276, 272);
             this.EmailPrompt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.EmailPrompt.Name = "EmailPrompt";
-            this.EmailPrompt.Size = new System.Drawing.Size(131, 46);
+            this.EmailPrompt.Size = new System.Drawing.Size(130, 54);
             this.EmailPrompt.TabIndex = 0;
             this.EmailPrompt.Text = "Email:";
             this.EmailPrompt.Click += new System.EventHandler(this.label1_Click);
@@ -56,11 +57,12 @@ namespace LearnEaseEndeavor_Forms
             // PasswordPrompt
             // 
             this.PasswordPrompt.AutoSize = true;
-            this.PasswordPrompt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordPrompt.Location = new System.Drawing.Point(196, 397);
+            this.PasswordPrompt.Font = new System.Drawing.Font("Yu Gothic UI", 20F, System.Drawing.FontStyle.Bold);
+            this.PasswordPrompt.ForeColor = System.Drawing.Color.White;
+            this.PasswordPrompt.Location = new System.Drawing.Point(203, 383);
             this.PasswordPrompt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PasswordPrompt.Name = "PasswordPrompt";
-            this.PasswordPrompt.Size = new System.Drawing.Size(207, 46);
+            this.PasswordPrompt.Size = new System.Drawing.Size(203, 54);
             this.PasswordPrompt.TabIndex = 1;
             this.PasswordPrompt.Text = "Password:";
             // 
@@ -91,7 +93,9 @@ namespace LearnEaseEndeavor_Forms
             // Validate
             // 
             this.Validate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Validate.Location = new System.Drawing.Point(831, 517);
+            this.Validate.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold);
+            this.Validate.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.Validate.Location = new System.Drawing.Point(726, 506);
             this.Validate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Validate.Name = "Validate";
             this.Validate.Size = new System.Drawing.Size(140, 60);
@@ -128,7 +132,9 @@ namespace LearnEaseEndeavor_Forms
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(337, 517);
+            this.button1.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.button1.Location = new System.Drawing.Point(507, 506);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(140, 60);
@@ -141,6 +147,7 @@ namespace LearnEaseEndeavor_Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(1200, 692);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.ErrorLable);
