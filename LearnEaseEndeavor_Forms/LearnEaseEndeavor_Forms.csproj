@@ -77,6 +77,9 @@
       <DependentUpon>AttendanceAssign.cs</DependentUpon>
     </Compile>
     <Compile Include="DBConnection.cs" />
+    <Compile Include="LEEDataSet.cs">
+      <DependentUpon>LEEDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="LEEDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

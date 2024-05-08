@@ -220,5 +220,10 @@ namespace LearnEaseEndeavor_Forms
                 Console.WriteLine("An error occurred while inserting Announcement records: " + ex.Message);
             }
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
